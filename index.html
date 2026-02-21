@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Emotion Detection</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Face API Library -->
+    <script async src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+</head>
+<body>
+    <div class="main-container">
+        <div class="header">
+            <h1>🎭 Live Emotion Detection AI</h1>
+            <p class="subtitle">Real-time facial emotion recognition</p>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="video-section">
+                <div class="camera-container">
+                    <video id="video" autoplay muted playsinline></video>
+                    <canvas id="canvas"></canvas>
+                    <div id="loading-indicator" class="loading">Loading Models...</div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <div class="emotion-display">
+                    <h2>Primary Emotion</h2>
+                    <div class="emotion-main">
+                        <p id="emotion-name" class="emotion-value">--</p>
+                        <p id="emotion-confidence" class="confidence">0%</p>
+                    </div>
+                </div>
+
+                <div class="emotions-detailed">
+                    <h3>All Emotions</h3>
+                    <div id="emotions-list" class="emotions-grid">
+                        <!-- emotions will be populated here -->
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div id="face-count" class="stat-item">Faces Detected: 0</div>
+                    <button id="toggle-btn" class="toggle-button">Start Camera</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
